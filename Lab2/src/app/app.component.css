@@ -1,0 +1,47 @@
+.row{
+    display:flex;
+    gap:10px;
+    margin-top:10px;
+}
+
+.col>.row:first-child{
+    margin-top:0px;
+}
+
+.row>div:not(.col){
+    background-color:#ededed;
+    color:#424242;
+    border-radius:10px;
+    flex:1;
+    padding:10px;
+    display:flex;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.col{
+    flex:0.75;
+}
+
+.container{
+    margin:auto;
+    width:1000px;
+}
+
+ul{
+    margin:0px;
+}
+
+.row>div:not(.col).bomb{
+    display:block;
+}
+
+.light .row>div:not(.col){
+    background-color:#ededed;
+    color:#424242;
+}
+
+.dark .row>div:not(.col){
+    background-color:#424242;
+    color:#ededed;
+}
