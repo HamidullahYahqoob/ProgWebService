@@ -1,0 +1,22 @@
+.container{
+    width:1000px;
+    
+    margin:auto;
+}
+
+.row{
+    display:flex;
+    gap:10px;
+    margin-bottom: 10px;
+}
+
+.row>div{
+    background-color:#4d4b50;
+    padding:10px;
+    flex:1;
+    border-radius:5px;
+}
+
+.title{
+    font-size:2em;
+}
