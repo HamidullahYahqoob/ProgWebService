@@ -1,0 +1,82 @@
+/* You can add global styles to this file, and also import other style files */
+body{
+    background: linear-gradient(to bottom, #28264e, #361d51, #550d57) fixed;
+}
+
+.container{
+    margin-top: 20px;
+    margin-bottom:20px;
+}
+
+.fond{
+    background:linear-gradient(to bottom, #788be7, #6373c0);
+    border:white solid 5px;
+    border-bottom-color:rgb(236, 236, 236);
+    border-right-color:rgb(236, 236, 236);
+    border-radius:50px;
+    color:white;
+    font-family:Georgia;
+    padding:10px;
+}
+
+nav .row{
+    gap:20px;
+}
+
+nav a{
+    text-decoration: none;
+    text-align:center;
+    font-weight:bolder;
+}
+
+nav a:hover{
+    background:linear-gradient(to bottom, #b1bcf3, #727fc0);
+    color:white;
+}
+
+.logo.col-auto{
+    background:linear-gradient(to bottom, #ffffff, #eeeeee);
+    border-radius:35px;
+    padding:15px;
+    padding-left:17px;
+    margin-left:15px;
+    border:black solid 3px;
+}
+
+.titre{
+    font-weight:bolder;
+    font-size:2em;
+}
+
+.fond form, .fond .form{
+    background:linear-gradient(to bottom, rgba(0,0,0,0.4), rgba(0,0,0,0.6));
+    padding:20px;
+    border-radius:30px;
+    margin-bottom:10px;
+}
+
+.profile{
+    border-radius:20px;
+}
+
+.slot{
+    border:white solid 5px;
+    border-radius:20px;
+}
+
+#message, #messageRoulette{
+    margin:auto;
+    margin-top:10px;
+    margin-bottom:10px;
+    width:400px;
+    padding:5px;
+    background: linear-gradient(to bottom, rgba(0,0,0,0.4), rgba(0,0,0,0.6));
+    border-radius:10px;
+    font-family:verdana;
+    font-weight:bold;
+}
+
+.money{
+    font-family:verdana;
+    font-weight:bold;
+}

@@ -1,0 +1,11 @@
+{
+  "i18n":{
+    "Argent":"Your money : $ {{x}}",
+    "Num":"Bet $ 5 on a number",
+    "Rouge":"Bet $ 5 on red",
+    "Noir":"Bet $ 5 on black",
+    "Roulette":"Bilingual roulette",
+    "Etoudi":"Do not play if you get dizzy easily"
+
+  }
+}

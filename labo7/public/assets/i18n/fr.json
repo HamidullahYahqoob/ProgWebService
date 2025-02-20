@@ -1,0 +1,11 @@
+{
+  "i18n":{
+    "Argent":"Votre argent : {{x}} $",
+    "Num":"Parier 5 $ sur un numéro",
+    "Rouge":"Parier 5 $ sur rouge",
+    "Noir":"Parier 5 $ sur noir",
+    "Roulette":"Roulette bilingue",
+    "Etoudi":"Ne pas jouer si vous êtes facilement étourdi(e)"
+
+  }
+}

@@ -1,0 +1,7 @@
+.roulette{
+    position:relative;
+}
+
+#ball{
+    position:absolute;
+}

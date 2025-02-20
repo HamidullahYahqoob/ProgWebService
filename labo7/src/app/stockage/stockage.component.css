@@ -1,0 +1,103 @@
+
+.colJeu{
+    border:black solid 2px;
+    background-color:white;
+}
+
+.colJeu>img{
+    border-bottom:solid black 1px;
+    display:block;
+}
+
+.petit{
+    height:25px;
+    width:75px;
+}
+
+.moyen{
+    height:50px;
+    width:75px;
+}
+
+.jeu{
+    width:249px;
+    position:relative;
+}
+
+#fleche{
+    position:absolute;
+    left:-70px;
+    top:80px;
+}
+
+[id^="stop"]{
+    border:black solid 3px;
+    border-radius:20px;
+    background-color:crimson;
+    color:white;
+    padding:10px;
+    margin:5px 10px 0px 10px;
+    display:none;
+    text-align:center;
+    cursor:pointer;
+}
+
+#argent{
+    background-color:white;
+    padding:10px;
+    border-radius:10px;
+    color:limegreen;
+    font-weight:bold;
+    width:100px;
+    text-align:center;
+}
+
+.panneau{
+    border:black solid 3px;
+    border-radius:20px;
+    background:linear-gradient(to bottom, #a0c0fb, #6d85d4, #5f54b1);
+    padding:10px;
+    height:230px;
+}
+
+#jouer{
+    background-color:black;
+    border:black solid 3px;
+    border-radius:20px;
+    padding:10px;
+    font-weight:bold;
+    color:white;
+    width:200px;
+    text-align:center;
+    cursor:pointer;
+}
+
+#jouer:active{
+    background-color:white;
+    color:limegreen;
+}
+
+#message{
+    background-color:white;
+    width:200px;
+    border-radius:10px;
+    padding:10px;
+    font-weight:bold;
+    font-size:1em;
+}
+
+.stopRow{
+    height:45px;
+}
+
+.colStop{
+    width:80px;
+}
+
+.rowJeu{
+    display:flex;
+    flex-wrap:wrap;
+    justify-content: center;
+    margin:auto;
+    align-items:center;
+}

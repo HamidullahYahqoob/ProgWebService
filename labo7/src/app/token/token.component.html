@@ -1,0 +1,16 @@
+<main class="container fond">
+    <div class="row justify-content-around" *ngIf="spotify.spotifyToken != null">
+      <div class="col-3">
+        <h3>Chercher un artiste</h3>
+        <input [(ngModel)]="artistName" type="text" name="artistName" placeholder="Nana Mouskouri" class="form-control">
+        <button (click)="getArtist()" class="btn btn-light">Rechercher</button>
+      </div>
+      <div class="col-8">
+        <div *ngIf="artist != undefined">
+          <h3>Résultat</h3>
+          <p>Nom : {{artist.name}}</p>
+          <img width="400" [src]="artist.imageUrl" [alt]="artist.name">
+        </div>
+      </div>
+    </div>
+  </main>

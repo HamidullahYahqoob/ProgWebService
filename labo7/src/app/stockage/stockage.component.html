@@ -1,0 +1,70 @@
+<main class="container fond">
+    <div class="row">
+      <div class="col-3">
+        <form (ngSubmit)="createProfile()" *ngIf="!profile">
+          Nom
+          <input type="text" name="name" [(ngModel)]="name" placeholder="Maurice" class="form-control"><br>
+          Âge
+          <input type="number" name="age" [(ngModel)]="age" placeholder="56" class="form-control"><br>
+          <input type="submit" value="Créer le profil" class="form-control btn btn-light">
+        </form>
+        <div *ngIf="profile != undefined" class="form text-center">
+          <img src="../../assets/images/profile.png" alt="Profil" class="profile" width="150">
+          <div>Nom : {{profile.name}}</div>
+          <div>Âge : {{profile.age}} ans</div>
+          <div>Argent : {{profile.money}} $</div><br>
+          <button class="form-control btn btn-light" (click)="clearProfile()">Nouveau profil</button>
+        </div>
+      </div>
+      <div class="col-8 text-center">
+        <div class="rowJeu" style="align-items:unset;">
+          <div class="jeu">
+            <img src="../../assets/images/ici.png" alt="Indicateur" id="fleche">
+            <div class="rowJeu">
+                <div class="colJeu">
+                    <img id="col1row1" src="" alt="Icône" class="petit">
+                    <img id="col1row2" src="" alt="Icône" class="moyen">
+                    <img id="col1row3" src="" alt="Icône" class="grand">
+                    <img id="col1row4" src="" alt="Icône" class="moyen">
+                    <img id="col1row5" src="" alt="Icône" class="petit">
+                </div>
+                <div class="colJeu">
+                    <img id="col2row1" src="" alt="Icône" class="petit">
+                    <img id="col2row2" src="" alt="Icône" class="moyen">
+                    <img id="col2row3" src="" alt="Icône" class="grand">
+                    <img id="col2row4" src="" alt="Icône" class="moyen">
+                    <img id="col2row5" src="" alt="Icône" class="petit">
+                </div>
+                <div class="colJeu">
+                    <img id="col3row1" src="" alt="Icône" class="petit">
+                    <img id="col3row2" src="" alt="Icône" class="moyen">
+                    <img id="col3row3" src="" alt="Icône" class="grand">
+                    <img id="col3row4" src="" alt="Icône" class="moyen">
+                    <img id="col3row5" src="" alt="Icône" class="petit">
+                </div>
+            </div>
+            <div class="rowJeu stopRow">
+                <div class="colStop">
+                    <div id="stop1" (mousedown)="stop(0)">Stop</div>
+                </div>
+                <div class="colStop">
+                    <div id="stop2" (mousedown)="stop(1)">Stop</div>
+                </div>
+                <div class="colStop">
+                    <div id="stop3" (mousedown)="stop(2)">Stop</div>
+                </div>
+            </div>
+        </div>
+    
+        <div class="panneau">
+            <div class="rowJeu">
+                <div id="jouer" (click)="jouer()">Jouer (-1$)</div>
+            </div>
+            <div class="rowJeu">
+                <div id="message">Qu'attendez-vous pour jouer ?</div>
+            </div>
+        </div>
+        </div>
+      </div>
+    </div>
+  </main>

@@ -1,0 +1,24 @@
+<header class="container fond">
+  <div class="row align-items-center">
+      <div class="col-auto logo">
+          <img src="../assets/images/seven.png" alt="Sept">
+      </div>
+      <div class="col titre">
+          Pas le laboratoire 7
+      </div>
+  </div>
+</header>
+
+<nav class="container">
+  <div class="row">
+      <a href="" class="col fond" [routerLink]="['/stockage']">Machine à sous</a>
+      <a href="" class="col fond" [routerLink]="['/i18n']">Roulette bilingue</a>
+      <a href="" class="col fond" [routerLink]="['/token']">Spotify</a>
+  </div>
+</nav>
+
+<router-outlet></router-outlet>
+
+<footer class="container fond text-center">
+  &copy; Définitivement pas le laboratoire 7
+</footer>
