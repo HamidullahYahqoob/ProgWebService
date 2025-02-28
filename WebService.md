@@ -204,3 +204,29 @@ export class BlueComponent {
 
 Trois changement, le nom est maintenant reçu en paramètre, il retourne ```Promise<Character>``` et la fonction retourne maintenant un character.
 
+## Stockage
+Stockage local = permanent (ne se nettoie jamais tout seul) \
+Stockage session = temporaire 
+#### Lorsqu'il s'agit d'un string
+``` sessionStorage.setItem("username", this.guestName); ``` or ``` localStorage.setItem("username", this.guestName); ``` 
+
+La récupération se fait dans le ngOnInit() ```this.guestName = sessionStorage.getItem("username");``` \
+Il faudra que guestName soit aussi capable d'être null
+
+#### Lorsqu'il s'agit d'un autre type que string
+Pour stocker : ```localStorage.setItem("guest", JSON.stringify(this.guestData));``` 
+
+Pour recupérer dans ngOnInit() :
+
+```
+let guestStringData : string | null = localStorage.getItem("guest");
+
+if(guestStringData != null){
+            this.guestData = JSON.parse(guestStringData);
+        }
+```
+Pour remove on peut utiliser localStorage.removeItem("guest") ou juste .clear() \
+
+Tu peux voir les items stocké dans F12 &rarr; storage.
+
+
