@@ -114,7 +114,7 @@ export const routes: Routes = [
 ];
 ```
 Ajout de ``` <router-outlet></router-outlet> ``` dans le HTML du composant app (Parent) \
-Si je veux que certain attribut puissent diriger vers un autre composant je peux ajouter ``` <div [routerLink]="['/album']" >``` \
+Si je veux que certain attribut puissent diriger vers un autre composant je dois mettre le import RouterModule et je peux ajouter ``` <div [routerLink]="['/album']" >``` \
 \
 \
 *Si je veux envoyer une String via le routage* \
