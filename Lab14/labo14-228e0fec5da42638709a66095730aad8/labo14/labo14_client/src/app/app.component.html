@@ -1,0 +1,91 @@
+
+<header class="container">
+  <img src="/assets/images/logo.png" alt="Logo">
+  MonPetitInventaire UwU
+</header>
+
+<main class="container">
+
+  <!-- GetAll -->
+  <div class="form">
+    <div><button (click)="seeAllItems()" style="background-color:#61AFFE;">Voir tous mes items</button></div>
+    <div>
+      <table><tr>
+          <td></td>
+          <td><input type="text" disabled placeholder="Pèse juste sul'bouton dude"></td>
+      </tr></table>
+    </div>
+  </div>
+
+  <!-- Get -->
+  <div class="form">
+    <div><button (click)="seeOneItem()" style="background-color:#61AFFE;">Voir un item précis</button></div>
+    <div>
+      <table><tr>
+          <td>Id : </td>
+          <td><input type="number" placeholder="1" name="id" [(ngModel)]="itemId"></td>
+      </tr></table>
+    </div>
+  </div>
+
+  <!-- Post -->
+  <div class="form">
+    <div><button (click)="createItem()" style="background-color:#49CC90;">Créer un item</button></div>
+    <div>
+      <table>
+        <tr><td>Nom : </td>
+        <td><input type="text" placeholder="silencieux d'automobile" name="name"  [(ngModel)]="itemName"></td></tr>
+        <tr><td>Valeur : </td>
+        <td><input type="number" placeholder="80" name="value" [(ngModel)]="itemValue"></td></tr>
+      </table>
+    </div>
+  </div>
+
+  <!-- Put -->
+  <div class="form">
+    <div><button (click)="editItem()" style="background-color:#FCA130;">Modifier un item</button></div>
+    <div>
+      <table>
+        <td>Id : </td>
+        <td><input type="number" placeholder="1" name="id" [(ngModel)]="itemId"></td>
+        <tr><td>Nom : </td>
+        <td><input type="text" placeholder="rhinocéros" name="name" [(ngModel)]="itemName"></td></tr>
+        <tr><td>Valeur : </td>
+        <td><input type="number" placeholder="2" [(ngModel)]="itemValue"></td></tr>
+      </table>
+    </div>
+  </div>
+
+  <!-- Delete -->
+  <div class="form">
+    <div><button (click)="deleteItem()" style="background:linear-gradient(to right, #49CC90, #F54140);">Supprimer un item</button></div>
+    <div>
+      <table><tr>
+          <td>Id : </td>
+          <td><input type="number" placeholder="1" name="id" [(ngModel)]="itemId"></td>
+      </tr></table>
+    </div>
+  </div>
+
+  <div class="form" *ngIf="item">
+    <div>Item précis :</div>
+    <div>Id : {{item.id}}, Nom : {{item.name}}, Valeur : {{item.value}}</div>
+  </div>
+
+  <div class="form" *ngIf="items">
+    <div>Plusieurs items :</div>
+    <div class="items">
+      <table>
+        <tr>
+          <td>Id</td><td>Nom</td><td>Valeur</td>
+        </tr>
+        <tr *ngFor="let i of items">
+          <td>{{i.id}}</td><td>{{i.name}}</td><td>{{i.value}}</td>
+        </tr>
+      </table>
+    </div>
+  </div>
+  
+</main>
+
+

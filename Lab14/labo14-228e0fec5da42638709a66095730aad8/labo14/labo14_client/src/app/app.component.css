@@ -1,0 +1,108 @@
+.container{
+    width:1000px;
+    margin:auto;
+    background: linear-gradient(rgb(234, 241, 255), rgb(250, 224, 254));
+    padding:10px;
+    border-radius:20px;
+    margin-bottom:10px;
+    font-family:verdana;
+}
+
+header{
+    display:flex;
+    align-items: center;
+}
+
+header img{
+    height:150px;
+}
+
+header{
+    font-family:Verdana;
+    font-size:2.5em;
+    font-weight:bold;
+    text-shadow: -1px -1px 0 #ff0000, 1px -1px 0 #ff0000, -1px 1px 0 #ff0000, 1px 1px 0 #ff0000;
+    color:rgb(0, 179, 255);
+}
+
+.form{
+    display:flex;
+    gap:10px;
+    margin-bottom:10px;
+}
+
+.form:last-child{
+    margin-bottom:0px;
+}
+
+.form>div{
+    background-color:white;
+    padding:10px;
+    border-radius:10px;
+}
+
+.form>div:first-child{
+    width:200px;
+    display:flex;
+    align-items: center;
+}
+
+.form>div:first-child button{
+    width:100%;
+    height:100%;
+    border:none;
+    min-height:30px;
+    display:flex;
+    align-items:center;
+    justify-content: center;
+    border-radius:5px;
+    cursor:pointer;
+}
+
+.form>div:last-child{
+    flex:1;
+    align-items: center;
+    display:flex;
+}
+
+.form input{
+    width:250px;
+}
+
+.form td:first-child{
+    width:80px;
+    text-align: right;
+    font-size:0.8em;
+}
+
+.items{
+    flex-wrap: wrap;
+}
+
+.items>div{
+    flex-basis:100%;
+}
+
+.items table{
+    border-collapse: collapse;
+}
+
+.items td{
+    width:150px;
+    text-align: center;
+    border-bottom:1px solid black;
+}
+
+.items td:first-child{
+    font-size:1em;
+    text-align: center;
+}
+
+.items tr:first-child{
+    font-weight:bold;
+}
+
+button{
+    color:white;
+    font-weight:bold;
+}

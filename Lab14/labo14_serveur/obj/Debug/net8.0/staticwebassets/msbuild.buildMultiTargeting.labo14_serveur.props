@@ -1,0 +1,3 @@
+﻿<Project>
+  <Import Project="..\build\labo14_serveur.props" />
+</Project>
