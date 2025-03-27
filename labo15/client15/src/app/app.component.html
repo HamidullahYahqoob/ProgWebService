@@ -1,0 +1,70 @@
+<header>
+  <img src="/assets/images/logo.png" alt="Logo" height="100">Gestions des nombreux incidents du parc
+</header>
+
+<main>
+  <div>
+    <h3>Gardiens du zoo</h3>
+
+    <input type="text" placeholder="Nom du gardien" name="zookeeperName" [(ngModel)]="zookeeperName"> 
+    <button (click)="createZookeeper()">Ajouter</button>
+
+    <div class="display">
+      <div *ngFor="let z of zookeepers">
+        <p>Id : {{z.id}}</p>
+        <p>Nom : {{z.name}}</p>
+        <div class="delete" (click)="deleteZookeeper(z.id)">❌</div>
+      </div>
+    </div>
+
+    <hr>
+
+    <h3>Dinosaures</h3>
+
+    <input type="text" placeholder="Nom du dinosaure" [(ngModel)]="dinosaurName" name="dinosaurName"> 
+    <input type="text" placeholder="Espèce" [(ngModel)]="dinosaurSpecie" name="dinosaurSpecie"> 
+    <input type="number" placeholder="Id du gardien" [(ngModel)]="dinosaurZookeeperId" name="dinosaurZookeeperId">
+    <button (click)="createDinosaur()">Ajouter</button>
+
+    <div class="display">
+      <div *ngFor="let d of dinosaurs" class="{{selectedDinosaurs.includes(d.id) ? 'light' : ''}}">
+        <p>Id : {{d.id}}</p>
+        <p>Nom : {{d.name}}</p>
+        <p>Espèce : {{d.specie}}</p>
+        <p>Gardien : {{d.zookeeper.name}}</p>
+        <button (click)="showIncidents(d)">Voir les incidents associés</button>
+        <button (click)="selectDinosaur(d.id)">Sélectionner</button>
+        <div class="delete" (click)="deleteDinosaur(d.id)">❌</div>
+      </div>
+    </div>
+
+    <hr>
+  
+    <h3>Ajouter un indicent</h3>
+
+    <input type="text" placeholder="Description" [(ngModel)]="incidentDescription" name="incidentDescription">
+    <input type="number" placeholder="Nombre de victime" [(ngModel)]="incidentNbVictims" name="incidentNbVictims">
+    <button (click)="createIncident()">Ajouter</button><br>
+    N'oubliez pas de sélectionner tous les dinosaurs impliqués ! <br>
+    (Réactualisez la page afin de pouvoir visualiser le nouvel incident en choisissant un dinosaure)
+  
+    <hr *ngIf="incidentsOf != null">
+
+    <div *ngIf="incidentsOf != null">
+      <h3>Incidents impliquant le dinosaure {{incidentsOf.name}}</h3>
+
+      <div class="display">
+        <div *ngFor="let i of incidentsOf.incidents">
+          <p>Id : {{i.id}}</p>
+          <p>Description : {{i.description}}</p>
+          <p>Victimes : {{i.nbCasualties}}</p>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</main>
+
+<footer>
+&copy; Visitez prudemment
+</footer>
