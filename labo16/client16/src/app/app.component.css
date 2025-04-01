@@ -1,0 +1,93 @@
+header{
+    display:flex;
+    font-size:3em;
+    align-items: center;
+    gap:20px;
+}
+
+header img{
+    height:100px;
+}
+
+header, footer{
+    background-color:rgb(20, 14, 41);
+    color:rgb(229, 244, 244);
+    margin:auto;
+    width:1000px;
+    padding:10px;
+    font-family:Arial;
+    border-radius:20px;
+}
+
+main{
+    display:flex;
+    gap:10px;
+    color:rgb(229, 244, 244);
+    font-family:Arial;
+    width:1020px;
+    margin:auto;
+}
+
+main>div{
+    padding:10px 15px ;
+    background-color:rgb(20, 14, 41);
+    flex:2;
+    border-radius:20px;
+}
+
+main div:first-child{
+    flex:1;
+}
+
+main, footer{
+    margin-top:10px;
+}
+
+input, button, textarea {
+    margin-top:5px;
+    padding:5px;
+    border-radius:5px;
+}
+
+textarea{
+    width:97%;
+}
+
+main h3{
+    margin:10px 0px;
+}
+
+footer{
+    text-align: center;
+}
+
+main .review{
+    background-color:rgb(37, 34, 73);
+    padding:30px 30px 40px 20px;
+    position:relative;
+    margin-bottom:10px;
+}
+
+.author, .game{
+    font-size:0.8em;
+    color:rgb(194, 216, 216);
+}
+
+.author{
+    position:absolute;
+    right:10px;
+    bottom:5px;
+}
+
+.game{
+    position:absolute;
+    left:10px;
+    bottom:5px;
+}
+
+.delete{
+    position:absolute;
+    right:10px;
+    top:5px;
+    cursor:pointer;
+}

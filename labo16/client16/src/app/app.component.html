@@ -1,0 +1,53 @@
+<header>
+  <img src="/assets/images/logo.png" alt="Logo de Stime">Stime
+</header>
+
+<main>
+  <div>
+
+    <h3>Inscription</h3>
+    <input type="text" name="username" placeholder="Pseudonyme" [(ngModel)]="regUsername">
+    <input type="text" name="email" placeholder="Adresse courriel" [(ngModel)]="regEmail">
+    <input type="text" name="password" placeholder="Mot de passe" [(ngModel)]="regPass">
+    <input type="text" name="passwordConfirm" placeholder="Confirmer le mot de passe" [(ngModel)]="regPassCon">
+    <br>
+    <button (click)="register()">S'inscrire</button>
+
+    <h3>Connexion</h3>
+    <input type="text" name="username" placeholder="Pseudonyme" [(ngModel)]="logUsername">
+    <input type="text" name="password" placeholder="Mot de passe" [(ngModel)]="logPass">
+    <br>
+    <button (click)="login()">Se connecter</button>
+    <br>
+    <button (click)="logout()">Se déconnecter</button>
+
+  </div>
+
+  <div>
+    <h3>Ajouter une critique</h3>
+    <input type="text" name="game" placeholder="Nom du jeu" [(ngModel)]="gameName"><br>
+    <textarea name="reviewText" [(ngModel)]="reviewText" placeholder="Rédigez une critique du jeu ici ..."></textarea><br>
+    <button (click)="addReview()">Poster la critique</button>
+
+    <hr>
+
+    <h3>Critiques</h3>
+    <div class="review" *ngFor="let r of reviews">
+      <div class="author">{{r.author}} +{{r.upvotes}}</div>
+      <div class="game">{{r.game}}</div>
+      <div class="delete">
+        <span (click)="upvoteReview(r.id)">🔼</span>&nbsp;&nbsp;
+        <span (click)="startEdit(r)">📝</span>&nbsp;&nbsp;
+        <span (click)="deleteReview(r.id)">✖</span>
+      </div>
+      <div *ngIf="!toggleEdit || reviewId != r.id">{{r.text}}</div>
+      <textarea *ngIf="toggleEdit && reviewId == r.id" name="editText" [(ngModel)]="reviewEditedText">bla</textarea>
+      <button *ngIf="toggleEdit && reviewId == r.id" (click)="editReview(r)">Modifier</button>
+    </div>
+
+  </div>
+</main>
+
+<footer>
+  &copy; As-tu déjeuné aujourd'hui ? 😠
+</footer>
