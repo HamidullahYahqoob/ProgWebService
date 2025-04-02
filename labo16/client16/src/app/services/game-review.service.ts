@@ -53,6 +53,7 @@ export class GameReviewService {
   async postReview(text : string, game : string){
 
     let reviewDTO =  {
+      id:0,
       text : text,
       game : game
   };
@@ -65,12 +66,22 @@ export class GameReviewService {
 
   async deleteReview(id : number){
 
-
+    let x = await lastValueFrom(this.http.delete<any>(domain + "api/Reviews/DeleteReview/"+id));
+    console.log(x);
+  
 
   }
 
   async editReview(id : number, text : string){
 
+    let reviewDTO =  {
+      id:id,
+      text : text,
+      game:"NimporteQuoi"
+  };
+
+    let x = await lastValueFrom(this.http.put<any>(domain + "api/Reviews/EditReview/"+id,reviewDTO));
+    console.log(x);
 
 
   }
@@ -78,7 +89,8 @@ export class GameReviewService {
   async upvoteReview(id : number){
 
 
-
+    let x = await lastValueFrom(this.http.put<any>(domain + "api/Reviews/UpvoteReview/"+id,null));
+    console.log(x);
   }
 
 }

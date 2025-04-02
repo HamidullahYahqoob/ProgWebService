@@ -39,15 +39,76 @@ namespace serveur16.Controllers
         }
 
         [HttpPut("{id}")]
-        public async Task<IActionResult> EditReview(int id/*, ReviewDTO reviewDTO*/)
+        public async Task<IActionResult> EditReview(int id, ReviewDTO reviewDTO)
         {
-            return NoContent();
+
+            User? user = await _userManager.FindByIdAsync(User.FindFirstValue(ClaimTypes.NameIdentifier)!);
+
+
+            Review? oldReview = await _context.Review.FindAsync(reviewDTO.Id);
+
+            if (oldReview == null) return NotFound();
+
+
+            if (user == null || !user.Reviews.Contains(oldReview)) return Unauthorized(new { Message = "Hey touche pas, c'est pas à toi !" });
+
+
+            reviewDTO.Game = oldReview.Game;
+            oldReview.Text = reviewDTO.Text;
+
+
+            try
+            {
+                await _context.SaveChangesAsync();
+            }
+            catch (DbUpdateConcurrencyException)
+            {
+                if (!await _context.Review.AnyAsync(x => x.Id == id)) return null;
+                else throw;
+            }
+
+            ReviewDisplayDTO? envoie = new ReviewDisplayDTO(oldReview);
+
+
+            return Ok(new { Message = "Commentaire modifié", Review = envoie});
+            
         }
 
         [HttpPut("{id}")]
         public async Task<IActionResult> UpvoteReview(int id)
         {
-            return Ok();
+            User? user = await _userManager.FindByIdAsync(User.FindFirstValue(ClaimTypes.NameIdentifier)!);
+
+            Review? review = await _context.Review.FindAsync(id);
+
+            if (review == null) return NotFound();
+
+            if (user == null || user.Reviews.Contains(review)) return Unauthorized(new { Message = "Hey touche pas, tu ne peux pas upvote !" });
+
+            if (!review.Upvoters.Contains(user))
+            {
+                review.Upvoters.Add(user);
+            }
+            else
+            {
+                review.Upvoters.Remove(user);
+            }
+
+
+            try
+            {
+                await _context.SaveChangesAsync();
+            }
+            catch (DbUpdateConcurrencyException)
+            {
+                if (!await _context.Review.AnyAsync(x => x.Id == id)) return null;
+                else throw;
+            }
+
+            ReviewDisplayDTO? envoie = new ReviewDisplayDTO(review);
+
+
+            return Ok(new { Message = "Mise à jours des vvotes", Review = envoie });
         }
 
         [HttpPost]
