@@ -1,0 +1,49 @@
+<div class="container">
+  <div>
+    🌐 Méta-laboratoire 21
+  </div>
+</div>
+<div class="container">
+  <div>
+
+    <!-- Profil -->
+    <div class="profile" *ngIf="reviewService.username() != null">
+      Profil actuel<br>
+      <div class="smol">
+        Pseudonyme : {{reviewService.username()}}<br>
+        Rôle(s) : {{reviewService.roles()}}
+      </div>
+    </div>
+
+    <!-- Inscription -->
+    <div class="log">Inscription</div>
+    <input type="text" placeholder="pseudo" name="registerUsername" [(ngModel)]="registerUsername">
+    <input type="text" placeholder="mot de passe" name="registerPassword" [(ngModel)]="registerPassword">
+    <input type="text" placeholder="confirmer le mot de passe" name="registerPasswordConfirm" [(ngModel)]="registerPasswordConfirm">
+    <button (click)="register()">S'inscrire</button>
+
+    <!-- Connexion -->
+    <div class="log">Connexion</div>
+    <input type="text" placeholder="pseudo" name="loginUsername" [(ngModel)]="loginUsername">
+    <input type="text" placeholder="mot de passe" name="loginPassword" [(ngModel)]="loginPassword">
+    <button (click)="login()">Se connecter</button>
+
+    <!-- Déconnexion -->
+    <div class="log">Déconnexion</div>
+    <button (click)="logout()">Se déconnecter</button>
+
+  </div>
+  <div>
+    
+    <div class="title">Avis sur le cours Prog Web services</div>
+
+    <!-- Créer un nouveau post -->
+    <div class="newPost" *ngIf="reviewService.roles().includes('student')">
+      <textarea name="newPost" placeholder="Commentaires sur 4W6..." [(ngModel)]="newText"></textarea>
+      <button (click)="postReview()">Ajouter</button>
+    </div>
+
+    <!-- Liste des posts -->
+    <app-post *ngFor="let r of reviews" [review]="r"></app-post>
+  </div>
+</div>

@@ -1,0 +1,23 @@
+.post{
+    background-color:rgb(232, 232, 232);
+    padding:10px;
+    position:relative;
+    margin-bottom:5px;
+}
+
+.delete{
+    position:absolute;
+    top:0px;
+    right:0px;
+    cursor:pointer;
+}
+
+.signature{
+    text-align: right;
+    font-size:0.8em;
+}
+
+.text{
+    padding-right:10px;
+    font-size:0.9em;
+}

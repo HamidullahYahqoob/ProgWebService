@@ -1,0 +1,59 @@
+.container{
+    display:flex;
+    gap:10px;
+    width:800px;
+    margin:auto;
+    margin-bottom:10px;
+}
+
+.container>div{
+    border:gray solid 1px;
+    padding:10px;
+    flex:1;
+    background-color:white;
+}
+
+.container>div:last-child{
+    flex:3;
+}
+
+.container>div:first-child input{
+    margin-top:5px;
+}
+
+.container>div:first-child button{
+    margin-top:5px;
+}
+
+.log:not(:first-child){
+    margin-top:10px;
+}
+
+.profile{
+    background-color:rgb(243, 243, 243);
+    padding:5px;
+}
+
+.smol{
+    font-size:0.8em;
+}
+
+.title{
+    margin-bottom:10px;
+}
+
+.newPost{
+    display:flex;
+    gap:10px;
+    margin-bottom:10px;
+}
+
+.newPost textarea{
+    flex:5;
+    resize:vertical;
+}
+
+.newPost button{
+    flex:1;
+}
+

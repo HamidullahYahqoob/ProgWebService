@@ -1,0 +1,5 @@
+<div class="post" *ngIf="review != null">
+    <div class="delete" (click)="delete(review)" *ngIf="reviewService.roles().includes('corruptedTeacher ')||review.author==reviewService.username()">❌</div>
+    <div class="text">{{review.text}}</div>
+    <div class="signature" *ngIf="review.author != ''">- {{review.author}}</div>
+</div>
